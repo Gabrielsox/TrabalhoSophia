@@ -54,14 +54,85 @@ public class Conta {
 
     }
 
-    private void Clear(){
-        
+    private void Clear() {
+
         for (int i = 0; i < 200; i++) {
             System.out.print("\r\n");
         }
-        
+
     }
-    
-    
+
+    private void Opcoes(int opcao) {
+        double valor;
+
+        switch (opcao) {
+            case 1:
+                Clear();
+
+                System.out.println("=============");
+                System.out.println("= DEPOSITAR =");
+                System.out.println("=============");
+
+                System.out.println("Digite o valor do Deposito");
+                valor = entrada.nextDouble();
+
+                if (valor > 0) {
+                    depositar(valor);
+                    System.out.println("valor atual:R$" + consultarSaldo());
+                } else {
+                    System.out.println("O valor a depositar não pode ser igual ou menor que zero");
+
+                }
+                break;
+
+            case 2:
+                Clear();
+
+                System.out.println("=========");
+                System.out.println("= SACAR =");
+                System.out.println("=========");
+
+                System.out.println("Digite o valor do Saque");
+                valor = entrada.nextDouble();
+
+                if (consultarSaldo() > valor) {
+                    sacar(valor);
+                    System.out.println("valor atual:R$" + consultarSaldo());
+                } else {
+                    System.out.println("Saldo insuficiente \n");
+                }
+
+                break;
+
+            case 3:
+                Clear();
+
+                System.out.println("===========");
+                System.out.println("= EXTRATO =");
+                System.out.println("===========");
+
+                extrato();
+                break;
+
+            case 4:
+                Clear();
+
+                System.out.println("=========");
+                System.out.println("= SALDO =");
+                System.out.println("=========");
+
+                System.out.println("O saldo atual é: R$" + consultarSaldo());
+                break;
+            case 5:
+                Clear();
+
+                System.out.println("OBRIGADO POR UTILIZAR O SISTEMA.");
+                break;
+
+            default:
+                Clear();
+                System.out.println("Opção inválida ");
+        }
+    }
 
 }
