@@ -2,6 +2,10 @@ package Main;
 
 import Banco.Cliente;
 import Banco.Conta;
+import Banco.Extrato;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class Main {
 
@@ -11,7 +15,7 @@ public class Main {
 
         Conta c = new Conta(cliente1, 0, 0);
         c.iniciar();
-		
+
     }
 
 }
