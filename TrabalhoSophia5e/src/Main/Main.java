@@ -13,7 +13,7 @@ public class Main {
         
         System.out.println("Digiete os dados da sua conta: ");
         System.out.println("===============================\n");
-        
+                
         System.out.println("CPF: ");                
         String cpf = sc.next();
         System.out.println("Nome: ");                
